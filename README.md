@@ -1,72 +1,131 @@
+<h1 align="center">CatOS Portfolio</h1>
+
+<p align="center">
+  An interactive portfolio disguised as a small personal operating system.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML-1a1512?style=flat-square&labelColor=2a201a&color=d98738" />
+  <img src="https://img.shields.io/badge/CSS-1a1512?style=flat-square&labelColor=2a201a&color=597d86" />
+  <img src="https://img.shields.io/badge/JavaScript-1a1512?style=flat-square&labelColor=2a201a&color=d98738" />
+  <img src="https://img.shields.io/badge/Canvas-1a1512?style=flat-square&labelColor=2a201a&color=597d86" />
+  <img src="https://img.shields.io/badge/Supabase-1a1512?style=flat-square&labelColor=2a201a&color=d98738" />
+</p>
+
+---
+
+## Overview
+
+CatOS is a personal portfolio built as a fake desktop operating system.
+
+Instead of scrolling through a standard page, visitors explore a desktop, open files, move windows, click stickers, play small games, and discover projects through an interactive interface.
+
+It is intentionally expressive, a little strange, and built to feel more personal than a template.
+
+<p align="center">
+  <img src="assets/readme/catos-preview.png" alt="CatOS desktop preview" width="90%">
+</p>
+
+---
+
+## Live Site
+
+https://gumoraes11.github.io/Portfolio/
+
+---
+
+## Tech Stack
+
+| Area | Tools |
+|---|---|
+| Structure | HTML |
+| Styling | CSS |
+| Interactivity | JavaScript |
+| Backend | Supabase |
+| Games | Canvas API |
+| Storage | localStorage and Supabase |
+
+---
+
 ## Features
 
 ### Window System
 
-All content is rendered inside draggable, resizable windows using a shared template.
-Windows support layering, focus management, and controls for close, minimize, and resize.
+Reusable windows are used for pages, files, folders, and apps.
+
+- Draggable and resizable windows
+- Focus and layering system
+- Close, minimize, and maximize controls
+- Scrollable window content
 
 ### Desktop Environment
 
-The desktop mimics a file system with clickable icons such as:
+The desktop acts like a small file system. Icons open different parts of the portfolio and can be rearranged.
 
-* portfolio_os.app
-* settings.app
-* commands.txt
-* graveyard.folder
-* unorganized_files.folder
-* snake.game
-* pong.game
-
-Icons can be repositioned, and their layout is saved locally.
+```txt
+portfolio_os.app
+settings.app
+commands.txt
+graveyard.folder
+unorganized_files.folder
+notes.txt
+memory_fragments.log
+snake.game
+pong.game
+```
 
 ### Command Palette
 
-Press `/` to open a command interface.
+Press `/` to open the command palette.
 
-Examples:
+```txt
+open /home
+open /works
+open /self
+open /guestbook
+open settings
+pet cat
+reset desktop
+safe mode
+```
 
-* `open /works`
-* `open /self`
-* `reset desktop`
-* `pet cat`
+### Boot Modes
+
+```txt
+[ ENTER ] boot CatOS
+[ S ] professional mode
+```
+
+Normal mode opens the full CatOS desktop.  
+Professional mode opens a cleaner version of the portfolio.
 
 ---
 
 ## Pages
 
-### /home
-
-Landing page with hero content and navigation prompts.
-
-### /works
-
-Displays projects as interactive cards. Each project can open a detailed window with images, descriptions, and links.
-
-### /self
-
-A character-sheet style personal page with text, stats, and a portrait.
-
-### /guestbook
-
-Users can submit messages that are stored in Supabase and visible to others.
-
-### /reach_me
-
-Contact information and links.
+| Page | Purpose |
+|---|---|
+| `/home` | Landing page and first impression |
+| `/works` | Project cards and detailed project windows |
+| `/self` | Character-sheet style about page |
+| `/guestbook` | Shared visitor messages |
+| `/reach_me` | Contact links |
 
 ---
 
-## Popups and Apps
+## Apps and Files
 
-Popups simulate files and applications:
+Most apps, folders, and text files are defined as popup content.
 
-* settings.app: toggles themes, effects, and UI features
-* commands.txt: lists available commands
-* sketchbook.folder: contains artwork and doodles
-* memory_fragments.log: opens narrative fragments
-* secret.log: hidden file revealed through interaction
-
-All popups are defined and rendered dynamically through JavaScript.
+```txt
+settings.app
+commands.txt
+graveyard.folder
+unorganized_files.folder
+sketchbook.folder
+memory_fragments.log
+secret.log
+```
 
 ---
 
@@ -74,56 +133,36 @@ All popups are defined and rendered dynamically through JavaScript.
 
 ### Snake
 
-Canvas-based grid game with keyboard controls and score tracking.
+Canvas-based Snake game with arrow-key controls, local high score tracking, and shared leaderboard support.
 
 ### Pong
 
-Simple paddle game with CPU opponent and rally tracking.
-
-Both games include shared leaderboards powered by Supabase.
+Canvas-based Pong game with a CPU opponent, rally tracking, local high score, and shared leaderboard support.
 
 ---
 
-## How It Works
+## Supabase
 
-## Guestbook and Leaderboards
+CatOS uses Supabase for shared online data.
 
-CatOS uses Supabase to persist shared data:
+```txt
+guestbook_messages
+game_scores
+```
 
-* Guestbook messages are stored and fetched from a database table
-* Game scores are submitted and displayed in leaderboards
+Used for:
 
-Frontend access is handled using a public API key with row-level security rules.
+- guestbook messages
+- Snake scores
+- Pong scores
 
-### HTML
-
-Defines the base layout:
-
-* boot screen
-* sidebar navigation
-* desktop container
-* window template
-* command palette
-
-### CSS
-
-Handles all styling:
-
-* CRT effects and overlays
-* window design and layout
-* typography and color themes
-* sticker positioning and effects
-
-### JavaScript
-
-Controls all interactivity:
-
-* window creation and behavior
-* routing between pages
-* popup definitions
-* desktop icon logic
-* command parsing
-* Supabase integration
-* game logic
+The frontend uses a public Supabase key with row-level security policies configured in Supabase.
 
 ---
+
+## Design Goals
+
+- Make a portfolio that feels personal and exploratory
+- Avoid a generic modern portfolio layout
+- Combine art, code, games, and interface design
+- Keep the site handmade without making it unusable
