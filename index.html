@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CatOS</title>
+  <meta name="description" content="My personal portfolio with some fun and flair" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="dark">
+  <div class="boot-screen" id="bootScreen" aria-live="polite">
+    <div class="boot-box">
+      <p class="boot-line boot-title">CatOS // personal portfolio system</p>
+      <p class="boot-line" id="bootTyping"></p>
+      <div class="boot-actions">
+        <button class="boot-mode" data-boot-mode="normal" type="button">[ ENTER ] boot CatOS</button>
+        <button class="boot-mode" data-boot-mode="safe" type="button">[ S ] ‘professional’ mode</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="crt-overlay" aria-hidden="true"></div>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <main class="os-shell" id="osShell">
+    <header class="browser-bar" aria-label="fake browser chrome">
+      <div class="browser-label">CatOS</div>
+      <div class="address-bar">portfolio/CatOS.local / <span id="addressPath">desktop</span></div>
+      <div class="browser-spacer" aria-hidden="true"></div>
+    </header>
+
+    <div class="os-grid">
+      <aside class="sidebar" aria-label="site directory">
+        <div class="brand">
+          <button class="brand-title" data-open-route="home" type="button">CatOS</button>
+          <div class="brand-subtitle">v1.1.0 // Purrminal</div>
+        </div>
+
+        <nav class="nav-list" aria-label="main navigation">
+          <button class="nav-item" data-open-route="home" type="button"><span>/home</span><kbd>H</kbd></button>
+          <button class="nav-item" data-open-route="works" type="button"><span>/works</span><kbd>W</kbd></button>
+          <button class="nav-item" data-open-route="self" type="button"><span>/self</span><kbd>S</kbd></button>
+          <button class="nav-item" data-open-route="guestbook" type="button"><span>/guestbook</span><kbd>G</kbd></button>
+          <button class="nav-item" data-open-route="reach" type="button"><span>/reach_me</span><kbd>C</kbd></button>
+        </nav>
+
+        <section class="mini-panel">
+          <h2>system notes</h2>
+          <p id="systemNote">click files. open windows.</p>
+        </section>
+
+      </aside>
+
+      <section class="main-stage" id="mainStage" aria-live="polite">
+        <div class="stage-grid" aria-hidden="true"></div>
+
+        <div class="window-layer" id="windowLayer" aria-live="polite"></div>
+
+        <div class="desktop-files" id="desktopFiles" aria-label="clickable desktop files">
+          <button class="desktop-file" data-icon-id="portfolio" data-open-route="home" type="button">
+            <img src="assets/icons/app.svg" alt="" />
+            <span>portfolio_os.app</span>
+          </button>
+          <button class="desktop-file" data-icon-id="settings" data-open-popup="settings" type="button">
+            <img src="assets/icons/settings.svg" alt="" />
+            <span>settings.app</span>
+          </button>
+          <button class="desktop-file" data-icon-id="graveyard" data-open-popup="graveyard" type="button">
+            <img src="assets/icons/folder.svg" alt="" />
+            <span>graveyard.folder</span>
+          </button>
+          <button class="desktop-file" data-icon-id="aboutsite" data-open-popup="aboutSite" type="button">
+            <img src="assets/icons/txt-file.svg" alt="" />
+            <span>why_this_exists.txt</span>
+          </button>
+          <button class="desktop-file" data-icon-id="commands" data-open-popup="commands" type="button">
+            <img src="assets/icons/command.svg" alt="" />
+            <span>commands.txt</span>
+          </button>
+          <button class="desktop-file" data-icon-id="snake" data-open-popup="snakeGame" type="button">
+            <img src="assets/icons/game.svg" alt="" />
+            <span>snake.game</span>
+          </button>
+          <button class="desktop-file" data-icon-id="pong" data-open-popup="pongGame" type="button">
+            <img src="assets/icons/game.svg" alt="" />
+            <span>pong.game</span>
+          </button>
+          <button class="desktop-file" data-icon-id="fragments" data-open-popup="memory" type="button">
+            <img src="assets/icons/txt-file.svg" alt="" />
+            <span>memory_fragments.log</span>
+          </button>
+          <button class="desktop-file" data-icon-id="abouttiny" data-open-popup="aboutTiny" type="button">
+            <img src="assets/icons/txt-file.svg" alt="" />
+            <span>notes.txt</span>
+          </button>
+          <button class="desktop-file" data-icon-id="loosefiles" data-open-popup="looseFiles" type="button">
+            <img src="assets/icons/folder.svg" alt="" />
+            <span>unorganized_files.folder</span>
+          </button>
+          <button class="desktop-file secret-icon" data-icon-id="secretNote" data-open-popup="secretNote" type="button" hidden>
+            <img src="assets/icons/txt-file.svg" alt="" />
+            <span>secret.log</span>
+          </button>
+        </div>
+
+        <img class="sticker sticker-peace" data-sticker="happy" src="assets/images/Stickers/stickerStare.png" alt="sticker" />
+        <img class="sticker sticker-sleep" data-sticker="sleepy" src="assets/images/Stickers/StickerV.png" alt="Sticker illustration" />
+      </section>
+    </div>
+
+    <footer class="bottom-bar">
+      <div class="command-row">
+        <button data-open-route="home" type="button">[H] home</button>
+        <button data-open-route="works" type="button">[W] works</button>
+        <button data-open-route="self" type="button">[S] self</button>
+        <button data-open-route="guestbook" type="button">[G] guestbook</button>
+        <button data-open-route="reach" type="button">[C] contact</button>
+        <button data-open-popup="settings" type="button">[O] settings</button>
+        <button id="closeTopWindow" type="button">[ESC] close</button>
+      </div>
+      <div class="status-text" id="statusText">ready // drag icons to reorganize</div>
+    </footer>
+  </main>
+
+  <template id="windowTemplate">
+    <article class="window app-window" role="dialog" aria-modal="false">
+      <div class="window-titlebar drag-handle">
+        <span class="window-title"></span>
+        <div class="window-buttons">
+          <button class="min-btn" type="button" aria-label="minimize">—</button>
+          <button class="max-btn" type="button" aria-label="maximize">□</button>
+          <button class="close-btn" type="button" aria-label="close">×</button>
+        </div>
+      </div>
+      <div class="window-body"></div>
+      <span class="resize-handle resize-nw" data-resize="nw" aria-hidden="true"></span>
+      <span class="resize-handle resize-ne" data-resize="ne" aria-hidden="true"></span>
+      <span class="resize-handle resize-sw" data-resize="sw" aria-hidden="true"></span>
+      <span class="resize-handle resize-se" data-resize="se" aria-hidden="true"></span>
+    </article>
+  </template>
+
+  <div class="command-palette hidden" id="commandPalette" aria-hidden="true">
+    <div class="command-shell">
+      <div class="command-title">command palette</div>
+      <form id="commandForm">
+        <label class="command-input-wrap">
+          <span>&gt;</span>
+          <input id="commandInput" type="text" autocomplete="off" spellcheck="false" placeholder="open /works, pet cat, open graveyard, safe mode..." />
+        </label>
+      </form>
+      <div class="command-hints">try: <code>open /self</code> <code>pet cat</code> <code>open graveyard</code> <code>about site</code></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
