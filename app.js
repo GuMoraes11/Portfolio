@@ -140,10 +140,10 @@ const routes = {
       <h2 class="section-title">/self — character sheet</h2>
       <div class="self-layout">
         <section>
-          <p class="lede">honestly sometimes I feel like I don’t bring too much to the table but end up surprising myself with cool ideas. sleepy, loyal, honest, trying very hard not to become too fit in too much haha.</p>
+          <p class="lede">honestly sometimes I feel like I don’t bring too much to the table but end up surprising myself with cool ideas. Im just here trying very hard not to fit in too much haha.</p>
           <div class="terminal-card">
-            <p>i like making things that feel handmade, I’m tired of mass appeal, you don’t have to be here if you dont like it, hopefully you see what I see though…</p>
-            <p>i like cats, systems that feel new, games, shaders, and websites [anything honestly] that don’t apologize for being unique.</p>
+            <p>i like making things that feel different or unique, I’m tired of mass appeal, you don’t have to be here if you dont like it, hopefully you see what I see though…</p>
+            <p>I've been all over the place hobbies wise, but the ones that stick tend to be the creative ones. I love game dev, drawing, cooking, baking, crochet, music, web dev, that type of stuff.</p>
           </div>
         </section>
         <aside class="profile-card">
