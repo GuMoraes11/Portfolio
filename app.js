@@ -45,27 +45,188 @@ const projects = [
   {
     id: 'pear-shader',
     title: 'Pear Shader Toolkit',
-    type: 'tool / unity shaders',
-    desc: 'A stylized shader/material toolkit: toon, shimmer, water, and a artist/non technical user friendly controls.',
-    detail:`
-    Heres a link to my <a href="https://github.com/GuMoraes11" target="_blank" rel="noreferrer">GitHub page</a>, feel free to click it and move on from here at your own pace, though theres probably more too see here too so don’t hesitate to come back
-    <div class="project-detail">
-      <img src="assets/images/PearShader/pear-hero.gif" alt="Pear shader screenshot" />
-    </div>
+    type: 'technical art / unity shaders / editor tooling',
+    desc: 'A stylized Unity shader toolkit for soft toon, glossy, shimmer, and water materials.',
+    windowWidth: 760,
+    detail: `
+      <article class="project-detail pear-case-study">
+        <header class="pear-hero">
+          <section class="pear-hero-copy">
+            <p class="meta-line">technical art / unity shaders / editor tooling</p>
+            <h2 class="section-title">Pear Shader Toolkit</h2>
+
+            <p class="lede">
+              Pear is a stylized Unity shader toolkit for soft toon, glossy, shimmer, and water materials.
+            </p>
+
+            <p>
+              I built it to explore how shader features can stay powerful without becoming overwhelming for artists or non-technical users. The focus was not just the final material look, but the full workflow: readable shader controls, custom inspectors, clean presets, validation warnings, and documentation.
+            </p>
+
+            <p>
+              View the repository, download the Unity package, or keep scrolling for a breakdown of the shader features and demo scenes.
+            </p>
+
+            <div class="project-actions">
+              <a href="https://github.com/GuMoraes11/Pear-Shader" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="https://github.com/GuMoraes11/Pear-Shader/releases/tag/v0.2.0" target="_blank" rel="noreferrer">Download Package</a>
+              <a href="https://gumoraes11.github.io/Pear-Shader/" target="_blank" rel="noreferrer">Demo Site</a>
+            </div>
+          </section>
+
+          <aside class="pear-hero-media">
+            <img src="assets/projects/pear-shader/pear-hero.gif" alt="Pear Shader Toolkit hero clip">
+          </aside>
+        </header>
+
+        <section class="pear-build-card">
+          <h3>What I built</h3>
+          <div class="pear-feature-grid">
+            <div>URP and Built-In toon shaders</div>
+            <div>Custom Unity material inspectors</div>
+            <div>Artist-friendly preset buttons</div>
+            <div>Grouped shader controls</div>
+            <div>Toon bands, ramp textures, hue shifting, outlines, rim light, emission, matcap, and shimmer</div>
+            <div>Stylized water with foam, sparkles, surface motion, mesh waves, and subsurface glow</div>
+          </div>
+        </section>
+
+        <section class="pear-text-section">
+          <div>
+            <h3>Why I made it</h3>
+            <p>
+              Pear started as a shader for my own Unity projects, then grew into a focused technical art toolkit.
+            </p>
+            <p>
+              A lot of stylized shaders either feel too limited or turn into a wall of confusing properties. I wanted Pear to sit somewhere cleaner: small enough to understand, flexible enough to make different looks, and friendly enough that someone could use it without reading the shader code first.
+            </p>
+            <p>
+              The inspector was a major part of the project. I wanted the controls to feel organized and approachable, especially for artists.
+            </p>
+            <p>
+              Instead of exposing every property in one long list, I grouped the controls into clear sections, added preset buttons, keyword syncing, and validation warnings for common setup issues.
+            </p>
+          </div>
+
+          <aside class="pear-small-media">
+            <img src="assets/projects/pear-shader/pear-custom-inspector.png" alt="Pear Shader custom Unity inspector">
+          </aside>
+        </section>
+
+        <section class="pear-text-section pear-text-section-flipped">
+          <aside class="pear-small-media">
+            <img src="assets/projects/pear-shader/pear-toon-turntable.gif" alt="Pear toon shader material turntable">
+          </aside>
+
+          <div>
+            <h3>Toon Shader</h3>
+            <p>
+              The toon shader supports soft and graphic stylized materials through controllable lighting bands, ramp textures, hue shifting, rim light, emission, matcap reflection, shimmer, and an outline pass.
+            </p>
+            <p>
+              I also built a custom material inspector so the shader feels like a tool instead of a raw list of properties.
+            </p>
+
+            <ul class="project-list">
+              <li>Two-band and three-band toon lighting</li>
+              <li>Ramp texture support</li>
+              <li>Texture hue shifting and hue shift speed</li>
+              <li>Rim light, emission, matcap, and shimmer controls</li>
+              <li>Inverted hull outline</li>
+              <li>Presets for Pear, Cozy, Bold, and Gloss</li>
+            </ul>
+          </div>
+        </section>
+      </article>
     `
   },
   {
-    id: 'Project-213c',
-    title: 'Project-213c',
-    type: 'game dev / games systems',
-    desc: 'A 2D platformer speed runner game where quick time thinking and strategy are as important as mechanical skill',
-    detail: `
-    Heres a link to the project github <a href="https://github.com/GuMoraes11/Unity-Platformer" target="_blank" rel="noreferrer">GitHub page</a>, feel free to click it and move on from here at your own pace, though theres probably more too see here too so don’t hesitate to come back
-    <div class="project-detail">
-      <img src="assets/images/Project213c/Project213c-gameplay.png" alt="Project213c gameplay screenshot" />
-      <img src="assets/images/Project213c/Project213c-tower.png" alt="Project213c tower screenshot" />
-    </div>
-    `
+  id: 'Project-213c',
+  title: 'Project 213',
+  type: 'game dev / cooperative platformer / speedrun systems',
+  desc: 'A cooperative 2D platformer built around speedrunning, communication, and shared problem-solving.',
+  windowWidth: 760,
+  detail: `
+    <article class="project-detail pear-case-study">
+      <header class="pear-hero">
+        <section class="pear-hero-copy">
+          <p class="meta-line">game dev / cooperative platformer / speedrun systems</p>
+          <h2 class="section-title">Project 213</h2>
+
+          <p class="lede">
+            Project 213 is a cooperative 2D platformer built around speedrunning, communication, and shared problem-solving.
+          </p>
+
+          <p>
+            Players work together to move through obstacle rooms as quickly as possible, using timing, positioning, and coordination to reach the end. The project focuses on fast iteration, readable mechanics, and creating a game loop that feels simple to understand but satisfying to optimize.
+          </p>
+
+          <p>
+            View the repository or keep scrolling for a breakdown of the gameplay systems, level design, and development process.
+          </p>
+
+          <div class="project-actions">
+            <a href="https://github.com/GuMoraes11/Unity-Platformer" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </section>
+
+        <aside class="pear-hero-media">
+          <img src="assets/projects/project-213/project-213-hero.gif" alt="Project 213 gameplay preview">
+        </aside>
+      </header>
+
+      <section class="pear-build-card">
+        <h3>What I built</h3>
+        <div class="pear-feature-grid">
+          <div>Cooperative 2D platforming gameplay</div>
+          <div>Player movement and jumping systems</div>
+          <div>Timer-based speedrun structure</div>
+          <div>Level layouts built around teamwork and timing</div>
+          <div>UI elements for player labels, timer, and game state</div>
+          <div>Visual style inspired by retro computer interfaces and arcade speedrun overlays</div>
+          <div>Playable prototype focused on pacing, readability, and cooperative flow</div>
+        </div>
+      </section>
+
+      <section class="pear-text-section">
+        <div>
+          <h3>Why I made it</h3>
+          <p>
+            Project 213 was built as a way to explore cooperative game design in a small, focused format.
+          </p>
+          <p>
+            I wanted the core idea to be immediately understandable: two players enter a level, work together, and try to complete it faster each time. The fun comes from the back-and-forth between execution and communication. A player might understand what needs to happen, but the challenge is coordinating that action under pressure.
+          </p>
+          <p>
+            The speedrun structure helped give the project a clear identity. Instead of treating the timer as just a UI feature, I used it as part of the game’s motivation. The goal is not only to finish, but to improve, retry, and find cleaner routes through the level.
+          </p>
+        </div>
+
+        <aside class="pear-small-media">
+          <img src="assets/projects/project-213/project-213-screenshot-1.png" alt="Project 213 gameplay screenshot">
+        </aside>
+      </section>
+
+      <section class="pear-text-section pear-text-section-flipped">
+        <aside class="pear-small-media">
+          <img src="assets/projects/project-213/project-213-screenshot-2.png" alt="Project 213 level design screenshot">
+        </aside>
+
+        <div>
+          <h3>Gameplay Design</h3>
+          <p>
+            Project 213 is built around short platforming challenges where cooperation matters more than raw mechanical difficulty.
+          </p>
+          <p>
+            The level design focuses on readable obstacles, repeated attempts, and moments where players need to pause, plan, or time their movement together. I wanted the rooms to feel like small puzzles that become faster once players understand the solution.
+          </p>
+          <p>
+            The visual presentation supports that goal by keeping the play area clear and high contrast. Player labels, bright platforms, and simple shapes make it easier to read what is happening during fast attempts.
+          </p>
+        </div>
+      </section>
+    </article>
+  `
   },
   {
     id: 'game-demo',
@@ -135,16 +296,17 @@ const routes = {
   },
   self: {
     title: '/self',
-    width: 710,
+    width: 920,
+    height: 720,
+    centered: true,
     html: () => `
       <h2 class="section-title">/self — character sheet</h2>
-      <div class="self-layout">
-        <section>
-          <p class="lede">honestly sometimes I feel like I don’t bring too much to the table but end up surprising myself with cool ideas. Im just here trying very hard not to fit in too much haha.</p>
-          <div class="terminal-card">
-            <p>i like making things that feel different or unique, I’m tired of mass appeal, you don’t have to be here if you dont like it, hopefully you see what I see though…</p>
-            <p>I've been all over the place hobbies wise, but the ones that stick tend to be the creative ones. I love game dev, drawing, cooking, baking, crochet, music, web dev, that type of stuff.</p>
-          </div>
+      <div class="self-layout self-layout-expanded">
+        <section class="self-summary">
+          <p class="lede">I like to make things that feel a little different. I’m drawn to creative work that has personality, the stuff that doesn’t try to appeal to everyone, but connects with the right people.</p>
+          <p>I’ve spent a lot of time exploring different hobbies, but I always come back to building and creating: game development, drawing, shaders, crochet, honestly any interactive projects or craft.</p>
+          <p>I like experimenting, following through with ideas and seeing where they go. Sometimes that leads to unexpected results, which is honestly my favorite part.</p>
+          <p>I’m still figuring things out, but I care a lot about making things that feel honest and tailored instead of mass appealing. I believe having a dedicated, caring, and invested client that will stick for as long as you’re around is way more valuable than passing high numbers.</p>
         </section>
         <aside class="profile-card">
           <h3>stats</h3>
@@ -152,13 +314,21 @@ const routes = {
             <div><dt>curiosity</dt><dd>high</dd></div>
             <div><dt>social battery</dt><dd>variable</dd></div>
             <div><dt>creativity</dt><dd>high</dd></div>
-            <div><dt>cat</dt><dd>???</dd></div>
+            <div><dt>approach</dt><dd>experimental</dd></div>
+            <div><dt>focus</dt><dd>idea-driven</dd></div>
           </dl>
           <div class="portrait-frame">
             <img src="assets/images/Portrait/portrait.png" alt="portrait" class="portrait-image">
           </div>
         </aside>
       </div>
+
+      <section class="terminal-card self-deep-dive">
+        <p>I’m from São Paulo, Brazil, and I’m currently studying Computer Science with a minor in Game Development at Chapman University. Moving between cultures has shaped how I notice things, from small everyday details to bigger questions about identity, safety, language, and self-expression.</p>
+        <p>I’ve been making things for as long as I can remember: drawings, songs, photos, websites, and games. Over time, I realized the medium changes, but the instinct stays the same. I like building things that help me communicate an idea, a feeling, or a small world someone else can step into.</p>
+        <p>My process usually starts with curiosity. I get attached to a strange idea or technical challenge, then work through moodboards, messy sketches, prototypes, and a lot of trial and error until it feels right. I’m especially interested in systems, mechanics, tools, and interactive spaces that make people want to explore.</p>
+        <p>CatOS is my way of making a portfolio feel more like an experience than a page.</p>
+      </section>
     `,
     after: () => {}
   },
@@ -483,14 +653,16 @@ function createWindow({ id, title, html, width = 520, height = null, centered = 
   node.style.left = `${left}px`;
   node.style.top = `${top}px`;
 
+  const availableHeight = Math.max(260, rect.height - top - margin);
+
   if (safeHeight) {
-    node.style.height = `${safeHeight}px`;
-    node.style.maxHeight = `${safeHeight}px`;
+    node.style.height = `${Math.min(safeHeight, availableHeight)}px`;
   } else {
-    const availableHeight = Math.max(260, rect.height - top - margin);
-    node.style.maxHeight = `${availableHeight}px`;
+    node.style.height = 'auto';
   }
 
+  node.style.maxHeight = `${availableHeight}px`;
+  
   node.style.zIndex = ++zIndex;
 
   wireWindowControls(node, title);
@@ -734,9 +906,9 @@ function setupProjectCards(node) {
       createWindow({
         id: `project-${project.id}`,
         title: `${project.title}.project`,
-        width: 560,
+        width: project.windowWidth || 560,
         kind: 'popup',
-        html: `<h3>${project.title}</h3><p class="meta-line">${project.type}</p><p>${project.desc}</p><div>${project.detail}</div>`
+        html: project.detail
       });
     });
   });
