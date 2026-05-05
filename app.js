@@ -375,7 +375,7 @@ function renderSafePage() {
     <div class="safe-page-inner">
       <h1>Safe Mode / CatOS</h1>
       <p><strong>Hey! I make, games, shaders, websites, and interactive systems.</strong></p>
-      <div class="badge-line"><span>Unity</span><span>Shaders</span><span>HTML/CSS/JS</span><span>Graphic Design</span><span>Game UI</span></div>
+      <div class="badge-line"><span>Unity</span><span>Shaders</span><span>HTML/CSS/JS</span><span>Graphic Design</span><span>Game development</span><span>GUI</span></div>
       <p>This is safe mode: the more formal portfolio shell. Same important info, less chaos. The full CatOS version has files, popups, stickers, tiny games, ‘memory fragments’, and a few more fun features I’ll let you explore if you’re interested.</p>
       <p id="works">Projects will go here: shader toolkit, CatOS Portfolio Site, game demo scene, and other stuff...</p>
       <hr />
