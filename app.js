@@ -377,9 +377,9 @@ function renderSafePage() {
       <p><strong>Hey! I make, games, shaders, websites, and interactive systems.</strong></p>
       <div class="badge-line"><span>Unity</span><span>Shaders</span><span>HTML/CSS/JS</span><span>Graphic Design</span><span>Game UI</span></div>
       <p>This is safe mode: the more formal portfolio shell. Same important info, less chaos. The full CatOS version has files, popups, stickers, tiny games, ‘memory fragments’, and a few more fun features I’ll let you explore if you’re interested.</p>
-      <p id="works">Projects will go here: shader toolkit, CatOS Portfolio Site, game demo scene, and future interactive experiments.</p>
+      <p id="works">Projects will go here: shader toolkit, CatOS Portfolio Site, game demo scene, and other stuff...</p>
       <hr />
-      <p id="about">I care about things that feel handmade, expressive, and personal — uniqueness and individuality are important too me.</p>
+      <p id="about">I care about things that unique, and expressive, and personal — individuality is important too me.</p>
       <p id="contact">Find me: <a href="mailto:gu.b.moraes11@gmail.com">gu.b.moraes11@gmail.com</a> · <a href="https://github.com/GuMoraes11" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/gubmoraes11/" target="_blank" rel="noreferrer">LinkedIn</a> </p>
       <div class="safe-actions"><button type="button" data-safe-action="catos">boot CatOS</button></div>
     </div>`;
