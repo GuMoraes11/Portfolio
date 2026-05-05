@@ -86,8 +86,8 @@ const projects = [
 const routes = {
   home: {
     title: '/home',
-    width: 1080,
-    height: 680,
+    width: 1020,
+    height: 620,
     centered: true,
     html: () => `
       <div class="hero-grid">
@@ -434,32 +434,61 @@ function createWindow({ id, title, html, width = 520, height = null, centered = 
   const node = windowTemplate.content.firstElementChild.cloneNode(true);
   node.dataset.windowId = id || `${kind}-${Date.now()}-${Math.random().toString(16).slice(2)}`;
   node.dataset.kind = kind;
+
+  if (id === 'route-home') node.classList.add('home-window');
+  if (id === 'route-self') node.classList.add('self-window');
+  if (id === 'sketchbook') node.classList.add('sketchbook-window');
+
   node.querySelector('.window-title').textContent = title;
   node.querySelector('.window-body').innerHTML = html;
 
   const rect = stageRect();
-  const safeWidth = Math.min(width, Math.max(280, rect.width - 28));
   const offset = (windowLayer.children.length % 6) * 28;
+  const margin = 18;
 
-  let left, top;
-  if (centered) {
-    left = clamp((rect.width - safeWidth) / 2, 8, rect.width - safeWidth - 8);
-    top = clamp((rect.height - (height || 400)) / 2, 8, rect.height - 180);
+  let safeWidth = width;
+  let safeHeight = height;
+
+  // Only scale the initial spawn size if the requested window is too large.
+  // This keeps the window visible on boot without stopping you from resizing it larger later.
+  if (height) {
+    const scale = Math.min(
+      1,
+      (rect.width - margin * 2) / width,
+      (rect.height - margin * 2) / height
+    );
+
+    safeWidth = Math.max(320, Math.floor(width * scale));
+    safeHeight = Math.max(260, Math.floor(height * scale));
   } else {
-    left = clamp(48 + offset, 8, rect.width - safeWidth - 8);
-    top = clamp(18 + offset, 8, rect.height - 180);
+    safeWidth = Math.min(width, Math.max(320, rect.width - margin * 2));
+    safeHeight = null;
   }
+
+  let left;
+  let top;
+
+  if (centered) {
+    left = Math.round((rect.width - safeWidth) / 2);
+    top = Math.round((rect.height - (safeHeight || 420)) / 2);
+  } else {
+    left = 48 + offset;
+    top = 40 + offset;
+  }
+
+  left = clamp(left, margin, Math.max(margin, rect.width - safeWidth - margin));
+  top = clamp(top, margin, Math.max(margin, rect.height - (safeHeight || 220) - margin));
 
   node.style.width = `${safeWidth}px`;
   node.style.left = `${left}px`;
   node.style.top = `${top}px`;
 
-  if (height) {
-    const safeHeight = Math.min(height, rect.height - top - 12);
+  if (safeHeight) {
     node.style.height = `${safeHeight}px`;
     node.style.maxHeight = `${safeHeight}px`;
   } else {
-    node.style.maxHeight = `${rect.height - top - 12}px`;
+    const availableHeight = Math.max(260, rect.height - top - margin);
+    node.style.maxHeight = `${availableHeight}px`;
   }
 
   node.style.zIndex = ++zIndex;
@@ -634,8 +663,8 @@ function makeResizable(win, boundsEl) {
         newHeight += newTop - 4;
         newTop = 4;
       }
-      if (newLeft + newWidth > bounds.width - 4) newWidth = bounds.width - newLeft - 4;
-      if (newTop + newHeight > bounds.height - 4) newHeight = bounds.height - newTop - 4;
+      // if (newLeft + newWidth > bounds.width - 4) newWidth = bounds.width - newLeft - 4;
+      // if (newTop + newHeight > bounds.height - 4) newHeight = bounds.height - newTop - 4;
 
       win.style.left = `${newLeft}px`;
       win.style.top = `${newTop}px`;

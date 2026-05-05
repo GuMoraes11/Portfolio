@@ -204,7 +204,7 @@ kbd { color: var(--orange); font-size: 0.75rem; }
 .main-stage {
   position: relative;
   min-width: 0;
-  overflow: visible;
+  overflow: hidden;
   background:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
@@ -229,7 +229,6 @@ body[data-theme="light"] .window { background: rgba(244,234,216,0.97); }
 .app-window {
   position: absolute;
   width: min(720px, calc(100% - 2rem));
-  max-width: calc(100% - 1rem);
   min-width: 280px;
   min-height: 150px;
   pointer-events: auto;
@@ -294,16 +293,10 @@ body[data-theme="light"] .window { background: rgba(244,234,216,0.97); }
 .app-window.is-maximized .resize-handle { display: none; }
 
 .hero-image {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  opacity: 0.62;
-  filter: contrast(1.08) brightness(0.86);
-  display: block;
-  z-index: 2;
+  opacity: 0.65;
 }
 
 .hero-grid {
@@ -416,16 +409,8 @@ body[data-theme="light"] .window { background: rgba(244,234,216,0.97); }
   z-index: 6;
   filter: drop-shadow(5px 7px 0 rgba(0,0,0,0.35));
 }
-.sticker-peace { width: min(190px, 20vw); right: 3%; top: 4.8rem; transform: rotate(5deg);}
-.sticker-sleep {
-  width: min(230px, 22vw);
-  left: -2.2rem;
-  bottom: 2.1rem;
-  transform: rotate(-13deg);
-  opacity: 0.98;
-  z-index: 12;
-  filter: drop-shadow(3px 5px 0 rgba(0,0,0,0.28));
-}
+.sticker-peace { width: min(190px, 20vw); right: 3%; top: 4.8rem; transform: rotate(5deg); opacity: 0.65; }
+.sticker-sleep { width: min(150px, 16vw); left: 1.2rem; bottom: 4.3rem; transform: rotate(-7deg); opacity: 0.95; }
 
 .bottom-bar {
   display: flex;
@@ -444,63 +429,6 @@ body[data-theme="light"] .window { background: rgba(244,234,216,0.97); }
 
 .sketchbook-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
 .sketch-slot { min-height: 120px; border: 1px dashed var(--soft-line); display: grid; place-items: center; text-align: center; color: var(--muted); padding: 0.75rem; background: rgba(89,125,134,0.08); }
-
-.doodle-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
-  margin-top: 1rem;
-}
-.doodle-card {
-  margin: 0;
-  border: 1px solid var(--soft-line);
-  background: rgba(0,0,0,0.14);
-  color: var(--ink);
-  padding: 0.65rem;
-  cursor: pointer;
-  text-align: center;
-}
-.doodle-card:hover,
-.doodle-card:focus-visible {
-  outline: 2px solid var(--orange);
-  box-shadow: 0 0 18px var(--glow);
-}
-.doodle-card img {
-  display: block;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border: 1px solid var(--soft-line);
-  background: rgba(0,0,0,0.22);
-}
-.doodle-card span {
-  display: block;
-  margin-top: 0.45rem;
-  color: var(--dim);
-  font-size: 0.78rem;
-  text-align: center;
-  word-break: break-word;
-}
-.doodle-viewer {
-  width: 100%;
-  height: 100%;
-  min-height: 420px;
-  display: grid;
-  place-items: center;
-  background: rgba(0,0,0,0.18);
-}
-.doodle-viewer img {
-  display: block;
-  max-width: 100%;
-  max-height: calc(100vh - 180px);
-  object-fit: contain;
-  border: 1px solid var(--soft-line);
-  background: rgba(0,0,0,0.22);
-}
-@media (max-width: 700px) {
-  .doodle-grid { grid-template-columns: 1fr; }
-  .doodle-card img { height: auto; max-height: 420px; object-fit: contain; }
-}
 .snake-wrap { display: grid; gap: 0.75rem; }
 .snake-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; color: var(--muted); }
 #snakeCanvas {
@@ -522,7 +450,6 @@ body[data-theme="light"] .window { background: rgba(244,234,216,0.97); }
   .sidebar { border-right: 0; border-bottom: 2px solid var(--line); max-height: 220px; }
   .nav-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-grid, .self-layout, .project-grid { grid-template-columns: 1fr; }
-  .app-window { width: calc(100% - 1rem); }
   .sticker-peace { width: 120px; right: 0.6rem; top: 1rem; }
   .sticker-sleep { display: none; }
   .bottom-bar { align-items: flex-start; flex-direction: column; }
@@ -532,7 +459,7 @@ body[data-theme="light"] .window { background: rgba(244,234,216,0.97); }
 .main-stage::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -20%;
   pointer-events: none;
   background:
     radial-gradient(circle at 24% 26%, rgba(217, 135, 56, 0.06), transparent 18rem),
@@ -550,32 +477,30 @@ body[data-theme="light"] .window { background: rgba(244,234,216,0.97); }
 .desktop-files { z-index: 4; }
 .home-centerpiece {
   position: relative;
-  min-height: 420px;
+  min-height: 260px;
   border: 2px solid var(--line);
   background:
+    linear-gradient(transparent 50%, rgba(0,0,0,0.24) 50%),
     radial-gradient(circle at 50% 55%, rgba(89,125,134,0.18), transparent 42%),
     rgba(0,0,0,0.18);
+  background-size: 100% 4px, auto, auto;
   overflow: hidden;
-  display: block;
-  padding: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
   box-shadow: inset 0 0 30px rgba(0,0,0,0.35), 0 0 20px var(--glow);
 }
 .home-centerpiece::before {
-  content: "";
+  content: "✦   ·       ✧      +     ·    ✦       ·      +";
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 18% 14%, rgba(244,234,216,0.38) 0 1px, transparent 2px),
-    radial-gradient(circle at 62% 10%, rgba(244,234,216,0.26) 0 1px, transparent 2px),
-    radial-gradient(circle at 80% 28%, rgba(244,234,216,0.32) 0 1px, transparent 2px),
-    radial-gradient(circle at 32% 58%, rgba(244,234,216,0.24) 0 1px, transparent 2px),
-    radial-gradient(circle at 68% 72%, rgba(244,234,216,0.24) 0 1px, transparent 2px),
-    linear-gradient(transparent 50%, rgba(0,0,0,0.23) 50%);
-  background-size: auto, auto, auto, auto, auto, 100% 4px;
+  inset: 1rem;
+  color: var(--soft-line);
+  font-size: 1.4rem;
+  letter-spacing: 0.7rem;
+  line-height: 3.2rem;
   animation: starFloat 26s linear infinite;
-  opacity: 0.52;
-  z-index: 3;
-  pointer-events: none;
+  opacity: 0.48;
+  white-space: pre-wrap;
 }
 @keyframes starFloat { from { transform: translateY(7px); } to { transform: translateY(-16px); } }
 .centerpiece-inner {
@@ -817,7 +742,6 @@ body[data-site-mode="safe"] .os-shell{border-color:transparent}
   margin-left: 0.45rem;
 }
 
-
 .project-detail img {
   width: 100%;
   height: auto;
@@ -832,25 +756,232 @@ body[data-site-mode="safe"] .os-shell{border-color:transparent}
   margin: 0.6rem 0 1rem;
 }
 
+/* home window fit fix */
+.app-window {
+  overflow: hidden;
+}
 
+.app-window > .window-body {
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.home-window .window-body {
+  padding: 0.85rem;
+}
+
+.home-window .hero-grid {
+  height: 100%;
+  min-height: 0;
+  align-items: stretch;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 0.75fr);
+}
+
+.home-window .hero-copy {
+  min-width: 0;
+  overflow: auto;
+  padding-right: 0.35rem;
+}
+
+.home-window .hero-copy h1 {
+  font-size: clamp(2rem, 5vw, 4.35rem);
+}
+
+.home-window .opening-line {
+  font-size: clamp(1rem, 2vw, 1.35rem);
+}
+
+.home-window .lede {
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.home-window .terminal-card {
+  padding: 0.7rem;
+}
+
+.home-window .home-centerpiece {
+  height: 100%;
+  min-height: 0;
+}
+
+/* CatOS custom scrollbars */
+.window-body,
+.hero-copy,
+.sidebar,
+.safe-page,
+.command-list,
+.message-list,
+.doodle-viewer {
+  scrollbar-width: thin;
+  scrollbar-color: var(--orange) rgba(0, 0, 0, 0.22);
+}
+
+.window-body::-webkit-scrollbar,
+.hero-copy::-webkit-scrollbar,
+.sidebar::-webkit-scrollbar,
+.safe-page::-webkit-scrollbar,
+.command-list::-webkit-scrollbar,
+.message-list::-webkit-scrollbar,
+.doodle-viewer::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.window-body::-webkit-scrollbar-track,
+.hero-copy::-webkit-scrollbar-track,
+.sidebar::-webkit-scrollbar-track,
+.safe-page::-webkit-scrollbar-track,
+.command-list::-webkit-scrollbar-track,
+.message-list::-webkit-scrollbar-track,
+.doodle-viewer::-webkit-scrollbar-track {
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 4px,
+      rgba(244, 234, 216, 0.18) 4px,
+      rgba(244, 234, 216, 0.18) 5px,
+      transparent 5px
+    ),
+    rgba(0, 0, 0, 0.22);
+  border-left: 1px solid var(--soft-line);
+}
+
+.window-body::-webkit-scrollbar-thumb,
+.hero-copy::-webkit-scrollbar-thumb,
+.sidebar::-webkit-scrollbar-thumb,
+.safe-page::-webkit-scrollbar-thumb,
+.command-list::-webkit-scrollbar-thumb,
+.message-list::-webkit-scrollbar-thumb,
+.doodle-viewer::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      180deg,
+      var(--orange),
+      var(--orange-soft)
+    );
+  border: 2px solid var(--panel);
+  box-shadow: inset 0 0 0 1px rgba(244, 234, 216, 0.22);
+}
+
+.window-body::-webkit-scrollbar-thumb:hover,
+.hero-copy::-webkit-scrollbar-thumb:hover,
+.sidebar::-webkit-scrollbar-thumb:hover,
+.safe-page::-webkit-scrollbar-thumb:hover,
+.command-list::-webkit-scrollbar-thumb:hover,
+.message-list::-webkit-scrollbar-thumb:hover,
+.doodle-viewer::-webkit-scrollbar-thumb:hover {
+  background: var(--blue);
+}
+
+.window-body::-webkit-scrollbar-corner,
+.hero-copy::-webkit-scrollbar-corner,
+.sidebar::-webkit-scrollbar-corner,
+.safe-page::-webkit-scrollbar-corner,
+.command-list::-webkit-scrollbar-corner,
+.message-list::-webkit-scrollbar-corner,
+.doodle-viewer::-webkit-scrollbar-corner {
+  background: var(--panel);
+}
+
+/* /self portrait */
 .portrait-frame {
   width: 100%;
   max-width: 260px;
   aspect-ratio: 1 / 1;
   border: 1px solid var(--soft-line);
   background: var(--panel);
-  padding: 6px; /* ← this creates the inner spacing */
-    box-shadow: 
-    inset 0 0 12px rgba(0,0,0,0.4),
+  padding: 6px;
+  margin-top: 0.9rem;
+  box-shadow:
+    inset 0 0 12px rgba(0, 0, 0, 0.4),
     0 0 8px var(--glow);
+  overflow: hidden;
 }
 
 .portrait-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
-  border: 1px solid var(--soft-line); /* ← actual image border */
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--soft-line);
   opacity: 0.9;
   filter: contrast(1.1) brightness(0.9);
+}
+
+/* sketchbook doodles */
+.doodle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.doodle-card {
+  margin: 0;
+  border: 1px solid var(--soft-line);
+  background: rgba(0, 0, 0, 0.14);
+  color: var(--ink);
+  padding: 0.65rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.doodle-card:hover,
+.doodle-card:focus-visible {
+  outline: 2px solid var(--orange);
+  box-shadow: 0 0 18px var(--glow);
+}
+
+.doodle-card img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--soft-line);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.doodle-card span {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--dim);
+  font-size: 0.78rem;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* full-size doodle viewer */
+.doodle-viewer {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.doodle-viewer img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 180px);
+  object-fit: contain;
+  border: 1px solid var(--soft-line);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+@media (max-width: 700px) {
+  .doodle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doodle-card img {
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+  }
 }
