@@ -420,7 +420,7 @@ body[data-theme="light"] .window { background: rgba(244,234,216,0.97); }
   z-index: 6;
   filter: drop-shadow(5px 7px 0 rgba(0,0,0,0.35));
 }
-.sticker-peace { width: min(190px, 20vw); right: 3%; top: 4.8rem; transform: rotate(5deg); opacity: 0.65; }
+.sticker-peace { width: min(190px, 20vw); right: 3%; top: 4.8rem; transform: rotate(5deg); opacity: 0.95; }
 .sticker-sleep { width: min(150px, 16vw); left: 1.2rem; bottom: 4.3rem; transform: rotate(-7deg); opacity: 0.95; }
 
 .bottom-bar {
